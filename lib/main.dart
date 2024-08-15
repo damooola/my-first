@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/models/count_model.dart';
 import 'package:my_first_app/pages/my_home_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => CountModel(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
